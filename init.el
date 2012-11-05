@@ -3,14 +3,18 @@
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-(add-to-list 'load-path "~/.emacs.d/modes")
 (add-to-list 'load-path "~/.emacs.d/evil")
 
 ;; Enable evil by default
-(require 'evil)  
+(require 'evil)
 (evil-mode 1)
 
-(require 'pig-mode)
+(load "~/.emacs.d/modes.el")
+
+;; Whitespace
+(setq whitespace-action '(auto-cleanup))
+(setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab tabs))
+(global-whitespace-mode)
 
 ;; OS X
 (when (eq system-type "darwin")
