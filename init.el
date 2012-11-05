@@ -33,5 +33,9 @@
          (cons 'height (/ (- (x-display-pixel-height) 80)
                              (frame-char-height)))))))
 
-(set-frame-size-according-to-resolution)
+(add-hook 'after-make-frame-functions
+          'set-frame-size-according-to-resolution)
+(add-hook 'after-init-hook
+          'set-frame-size-according-to-resolution)
+
 (color-theme-solarized 'dark)
