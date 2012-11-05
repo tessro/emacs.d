@@ -13,7 +13,8 @@
 (require 'pig-mode)
 
 ;; OS X
-(set-face-attribute 'default nil :font "Menlo 12")
+(when (eq system-type "darwin")
+  (set-face-attribute 'default nil :font "Menlo 12"))
 
 (defun set-frame-size-according-to-resolution ()
   (interactive)
