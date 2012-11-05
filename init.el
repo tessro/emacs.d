@@ -5,6 +5,8 @@
 
 (add-to-list 'load-path "~/.emacs.d/modes")
 (add-to-list 'load-path "~/.emacs.d/evil")
+
+;; Enable evil by default
 (require 'evil)  
 (evil-mode 1)
 
